@@ -1,0 +1,18 @@
+* BPGC-Campnet
+A set of scripts to automate logging in to the campus network at BPGC.
+** Linux (Network Manager)
+The NetworkManager dispatcher calls scripts in the /etc/NetworkManager/dispatcher.d/ directory whenever a network event occurs. These scripts respond to changes like connections, disconnections, and IP address assignments.
+1. Add your credentials to `connect`.
+        #+BEGIN_SRC bash
+username="<campnet-username>"
+password="<campnet-password>"
+        #+END_SRC
+2. Move the script to `/etc/NetworkManager/dispatcher.d/`
+   #+BEGIN_SRC bash
+sudo cp connect /etc/NetworkManager/dispatcher.d/
+   #+END_SRC
+3. Make the script executable
+   #+BEGIN_SRC bash
+sudo chmod +x /etc/NetworkManager/dispatcher.d/connect
+   #+END_SRC
+** iOS/iPad (Shortcuts & Automations)
